@@ -49,21 +49,25 @@ h1, h2, h3, h4, h5, h6 {
   margin: 12px 0 0 15px;
 }
 /* line 40, sass/custom.sass */
+#header #logo img {
+  display: block;
+}
+/* line 42, sass/custom.sass */
 #header #navigation {
   float: none;
   margin: 0;
 }
-/* line 43, sass/custom.sass */
+/* line 45, sass/custom.sass */
 #header #navigation ul.nav {
   float: none;
   display: inline-block;
 }
-/* line 47, sass/custom.sass */
+/* line 49, sass/custom.sass */
 #header #navigation ul.nav > li {
   float: none;
   display: inline-block;
 }
-/* line 51, sass/custom.sass */
+/* line 53, sass/custom.sass */
 #header #navigation ul.nav > li > a {
   display: inline-block;
   height: 80px;
@@ -76,29 +80,29 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
   background-color: transparent;
 }
-/* line 63, sass/custom.sass */
+/* line 65, sass/custom.sass */
 #header #navigation ul.nav > li > a:hover {
   border: 0;
   background-color: #f8fafa;
 }
-/* line 67, sass/custom.sass */
+/* line 69, sass/custom.sass */
 #header #navigation ul.nav > li.current-menu-item > a, #header #navigation ul.nav > li .current_page_item > a {
   color: #32b9b1;
   background-color: transparent;
 }
-/* line 73, sass/custom.sass */
+/* line 75, sass/custom.sass */
 #header ul.nav > li.search {
   padding: 20px 15px;
 }
-/* line 75, sass/custom.sass */
+/* line 77, sass/custom.sass */
 #header ul.nav > li.search label {
   display: none;
 }
-/* line 77, sass/custom.sass */
+/* line 79, sass/custom.sass */
 #header ul.nav > li.search input[type="submit"] {
   display: none;
 }
-/* line 79, sass/custom.sass */
+/* line 81, sass/custom.sass */
 #header ul.nav > li.search input[type="search"] {
   box-shadow: none;
   background-color: white;
@@ -107,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   margin: 0;
 }
-/* line 88, sass/custom.sass */
+/* line 90, sass/custom.sass */
 #header ul.nav > li.cart a {
   height: 80px;
   background: url(images/cart.png) no-repeat 0 0;
@@ -119,16 +123,16 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   line-height: 75px;
 }
-/* line 99, sass/custom.sass */
+/* line 101, sass/custom.sass */
 #header ul.nav > li.cart a:hover {
   background-color: #f8fafa;
 }
-/* line 102, sass/custom.sass */
+/* line 104, sass/custom.sass */
 #header ul.nav > li.cart .amount {
   display: none;
 }
 
-/* line 106, sass/custom.sass */
+/* line 108, sass/custom.sass */
 .footer-wrap {
   margin: 0;
   background-color: black;
@@ -137,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow: hidden;
 }
-/* line 114, sass/custom.sass */
+/* line 116, sass/custom.sass */
 .footer-wrap footer {
   padding: 0;
   max-width: 1000px;
@@ -145,28 +149,28 @@ h1, h2, h3, h4, h5, h6 {
   color: #999999;
   font-weight: 600;
 }
-/* line 121, sass/custom.sass */
+/* line 123, sass/custom.sass */
 .footer-wrap .logo {
   display: inline-block;
   vertical-align: middle;
   margin-right: 35px;
 }
-/* line 126, sass/custom.sass */
+/* line 128, sass/custom.sass */
 .footer-wrap p {
   display: inline-block;
 }
 
-/* line 129, sass/custom.sass */
+/* line 131, sass/custom.sass */
 .pull-left {
   float: left;
 }
 
-/* line 132, sass/custom.sass */
+/* line 134, sass/custom.sass */
 .pull-right {
   float: right;
 }
 
-/* line 135, sass/custom.sass */
+/* line 137, sass/custom.sass */
 .clearfix:after {
   content: "";
   display: table;
