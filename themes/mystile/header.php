@@ -22,6 +22,7 @@ global $woo_options, $woocommerce;
 
 <title><?php woo_title(''); ?></title>
 <?php woo_meta(); ?>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic" media="all" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
@@ -64,8 +65,8 @@ global $woo_options, $woocommerce;
 		<?php
 			if ( class_exists( 'woocommerce' ) ) {
 				echo '<ul class="nav pull-right">';
-				woocommerce_cart_link();
 				echo get_search_form();
+				woocommerce_cart_link();
 				echo '</ul>';
 			}
 		?>
@@ -75,7 +76,7 @@ global $woo_options, $woocommerce;
 		<nav id="navigation" role="navigation">
 			<?php
 				if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-					wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
+					wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav', 'theme_location' => 'primary-menu' ) );
 				} else {
 			?>
 	       <ul id="main-nav" class="nav">

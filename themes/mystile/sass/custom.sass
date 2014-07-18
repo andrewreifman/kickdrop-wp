@@ -1,9 +1,18 @@
+$orange: #ef9544
+$blue: #32b9b1
+$green: #51be38
+$red: #f05a5b
+
 *
   box-sizing: border-box
 
 body
+  font-family: "Source Sans Pro", sans-serif
   background-color: #eef2f2
   padding: 0
+
+h1, h2, h3, h4, h5, h6
+  font-family: "Source Sans Pro", sans-serif
 
 #top
   padding: 0
@@ -14,6 +23,9 @@ body
   ul.nav > li a
     padding: 0 14px
     line-height: 40px
+    color: #555
+    &:hover
+      color: #000
 
 #header
   padding: 0
@@ -30,15 +42,89 @@ body
     margin: 0
     ul.nav
       float: none
+      display: inline-block
 
-ul.nav li
-  float: none
-  display: inline-block
+      > li
+        float: none
+        display: inline-block
+
+        > a
+          display: inline-block
+          height: 80px
+          line-height: 76px
+          color: #000
+          font-size: 16px
+          padding: 0 15px
+          font-weight: 600
+          border-radius: 0
+          border: 0
+          background-color: transparent
+
+          &:hover
+            border: 0
+            background-color: #f8fafa
+
+        &.current-menu-item > a, .current_page_item > a
+          color: $blue
+          background-color: transparent
+
+  ul.nav
+    > li
+      &.search
+        padding: 20px 15px
+        label
+          display: none
+        input[type="submit"]
+          display: none
+        input[type="search"]
+          box-shadow: none
+          background-color: #fff
+          border-color: #d8dddd
+          padding: 8px 12px 8px 12px
+          border-radius: 4px
+          margin: 0
+
+      &.cart
+        a
+          height: 80px
+          background: url(images/cart.png) no-repeat 0 0
+          background-size: auto 26px
+          padding: 0 20px 0 62px
+          margin: 0
+          background-position: 20px 26px
+          font-size: 22px
+          color: #000
+          line-height: 75px
+
+          &:hover
+            background-color: #f8fafa
+
+        .amount
+          display: none
+
 
 .footer-wrap
   margin: 0
-  padding: 0
   background-color: #000
+  padding: 22px 0
+  height: 100px
+  width: 100%
+  overflow: hidden
+
+  footer
+    padding: 0
+    max-width: 1000px
+    margin: 0 auto
+    color: #999
+    font-weight: 600
+
+  .logo
+    display: inline-block
+    vertical-align: middle
+    margin-right: 35px
+
+  p
+    display: inline-block
 
 .pull-left
   float: left
