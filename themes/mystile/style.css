@@ -7,9 +7,9 @@ Author: WooThemes
 Author URI: http://www.woothemes.com
 Tags: woothemes
 
-	Copyright: (c) 2009-2011 WooThemes.
-	License: GNU General Public License v2.0
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Copyright: (c) 2009-2011 WooThemes.
+  License: GNU General Public License v2.0
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
 /*
@@ -333,9 +333,9 @@ a:hover {
 }
 /* 1.3 Typography */
 /*
-	All typography (and layout) based on a modular scale using 12 & 14 px values scaled in accordance the golden ratio (1.618)
-	http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
-	Remember to keep margins consistent and try to avoid margin-top. If everything has an appropriate margin-bottom we don't need one and vertical rhythm will be kept consistent
+  All typography (and layout) based on a modular scale using 12 & 14 px values scaled in accordance the golden ratio (1.618)
+  http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
+  Remember to keep margins consistent and try to avoid margin-top. If everything has an appropriate margin-bottom we don't need one and vertical rhythm will be kept consistent
 */
 h1,
 h2,

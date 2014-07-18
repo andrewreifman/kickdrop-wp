@@ -1,25 +1,78 @@
-/* 
-WOO CUSTOM STYLESHEET
----------------------
+/* line 1, sass/custom.sass */
+* {
+  box-sizing: border-box;
+}
 
-Instructions:
+/* line 4, sass/custom.sass */
+body {
+  background-color: #eef2f2;
+  padding: 0;
+}
 
-Add your custom styles in this file instead of style.css so it 
-is easier to update the theme. Simply copy an existing style 
-from style.css to this file, and modify it to your liking. */
+/* line 8, sass/custom.sass */
+#top {
+  padding: 0;
+  margin: 0;
+  background-color: #f6f8f8;
+  border-bottom: 1px solid #d8dddd;
+  height: 41px;
+}
+/* line 14, sass/custom.sass */
+#top ul.nav > li a {
+  padding: 0 14px;
+  line-height: 40px;
+}
 
+/* line 18, sass/custom.sass */
+#header {
+  padding: 0;
+  height: 81px;
+  background-color: white;
+  border-bottom: 1px solid #d8dddd;
+  margin-bottom: 60px;
+  max-width: 100%;
+  text-align: center;
+}
+/* line 26, sass/custom.sass */
+#header #logo {
+  margin: 12px 0 0 15px;
+}
+/* line 28, sass/custom.sass */
+#header #navigation {
+  float: none;
+  margin: 0;
+}
+/* line 31, sass/custom.sass */
+#header #navigation ul.nav {
+  float: none;
+}
 
-/* 
-GLOBAL STYLES
-----------------
-Add styles beneath this line that you want to be applied across your entire site */
+/* line 34, sass/custom.sass */
+ul.nav li {
+  float: none;
+  display: inline-block;
+}
 
+/* line 38, sass/custom.sass */
+.footer-wrap {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
 
-/* 
-DESKTOP STYLES
------------------
-Add styles inside the media query below that you only want to be applied to the desktop layout of your site */
+/* line 43, sass/custom.sass */
+.pull-left {
+  float: left;
+}
 
-@media only screen and (min-width: 768px) {
-	/* Desktop styles go here */
+/* line 46, sass/custom.sass */
+.pull-right {
+  float: right;
+}
+
+/* line 49, sass/custom.sass */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
