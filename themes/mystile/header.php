@@ -48,16 +48,9 @@ global $woo_options, $woocommerce;
 
 	<header id="header" class="col-full">
 	  <hgroup>
-	    <?php
-			  $logo = esc_url( get_template_directory_uri() . '/images/logo.png' );
-				if ( isset( $woo_options['woo_logo'] ) && $woo_options['woo_logo'] != '' ) { $logo = $woo_options['woo_logo']; }
-				if ( isset( $woo_options['woo_logo'] ) && $woo_options['woo_logo'] != '' && is_ssl() ) { $logo = preg_replace("/^http:/", "https:", $woo_options['woo_logo']); }
-			?>
-			<?php if ( ! isset( $woo_options['woo_texttitle'] ) || $woo_options['woo_texttitle'] != 'true' ) { ?>
-			    <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( get_bloginfo( 'description' ) ); ?>">
-			    	<img src="<?php echo $logo; ?>" width="134" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
-			    </a>
-		    <?php } ?>
+		  <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		  	<img src="<?php echo esc_url( get_template_directory_uri().'/images/logo.png' ); ?>" width="134" />
+		  </a>
 
 			<h3 class="nav-toggle"><a href="#navigation"><mark class="websymbols">&#178;</mark> <span><?php _e('Navigation', 'woothemes'); ?></span></a></h3>
 		</hgroup>
