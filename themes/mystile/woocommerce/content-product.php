@@ -52,6 +52,16 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			?>
 		</div>
 
+		<?php
+			/**
+			 * woocommerce_after_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_template_loop_rating - 5
+			 * @hooked woocommerce_template_loop_price - 10
+			 */
+			do_action( 'woocommerce_after_shop_loop_item_title' );
+		?>
+
 		<h3><?php the_title(); ?></h3>
 
 		<div style="float: left; width: 40px; border-radius: 50%;"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
