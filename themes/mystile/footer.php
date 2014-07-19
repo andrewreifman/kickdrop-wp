@@ -45,27 +45,13 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 		</section><!-- /#footer-widgets  -->
 	<?php } // End IF Statement ?>
 		<footer>
-			<div style="float:left; width: 50%;">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
 				<img src="<?php echo esc_url( get_template_directory_uri().'/images/shoe.svg' ); ?>" width="38" />
 			</a>
 
-			<?php if( isset( $woo_options['woo_footer_left'] ) && $woo_options['woo_footer_left'] == 'true' ) {
-				echo stripslashes( $woo_options['woo_footer_left_text'] );
-			} else { ?>
-				<p class="copyright"><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'woothemes' ); ?></p>
-			<?php } ?>
-			</div>
-			<div style="float:left; width: 50%;">
-				<style>
-				footer a{
-					color: #fff;
-				}
-				</style>
-<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-		</div>
+			<!-- <p class="copyright"><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'woothemes' ); ?></p> -->
+			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 		</footer><!-- /#footer  -->
-
 	</div><!-- / footer-wrap -->
 
 </div><!-- /#wrapper -->

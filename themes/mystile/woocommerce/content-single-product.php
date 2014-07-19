@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<div class="summary entry-summary">
 <h4><?php the_author() ?></h4>
-<p> I want this! <?if( function_exists('zilla_likes') ) zilla_likes();?></p>
+<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook
