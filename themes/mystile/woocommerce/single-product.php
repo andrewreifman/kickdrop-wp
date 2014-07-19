@@ -1,3 +1,7 @@
+<style>
+.reset_variations{display:none;}
+</style>
+
 <?php
 /**
  * The Template for displaying all single products.

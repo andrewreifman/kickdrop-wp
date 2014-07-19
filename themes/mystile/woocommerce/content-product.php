@@ -52,7 +52,10 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		?>
 
 		<h3><?php the_title(); ?></h3>
+		
+		<div style="float: left; width: 40px; border-radius: 50%;"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div> 
 		<h4><?php the_author() ?></h4>
+
 		<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
 
 		<?php
