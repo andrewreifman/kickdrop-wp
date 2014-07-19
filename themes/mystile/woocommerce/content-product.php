@@ -53,7 +53,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 		<h3><?php the_title(); ?></h3>
 		<h4><?php the_author() ?></h4>
-		<p> I want this! <?if( function_exists('zilla_likes') ) zilla_likes();?></p>
+		<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
 
 		<?php
 			/**
