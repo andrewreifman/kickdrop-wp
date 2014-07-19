@@ -117,6 +117,11 @@ function custom_override_checkout_fields( $fields ) {
           unset($fields['billing']['billing_phone']);
      return $fields;
 }
+
+function register_my_menu() {
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/
