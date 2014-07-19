@@ -122,6 +122,47 @@ function register_my_menu() {
   register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
+
+
+// Use WC 2.0 variable price format, now include sale price strikeout
+add_filter( 'woocommerce_variable_sale_price_html', 'wc_wc20_variation_price_format', 10, 2 );
+add_filter( 'woocommerce_variable_price_html', 'wc_wc20_variation_price_format', 10, 2 );
+function wc_wc20_variation_price_format( $price, $product ) {
+	// Main Price
+	$prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
+	$price = $prices[0] !== $prices[1] ? sprintf( __( '%1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+	// Sale Price
+	$prices = array( $product->get_variation_regular_price( 'min', true ), $product->get_variation_regular_price( 'max', true ) );
+	sort( $prices );
+	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( '%1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+ 
+	if ( $price !== $saleprice ) {
+		$price = '<del>' . $saleprice . '</del> <ins>' . $price . '</ins>';
+	}
+	return $price;
+}
+
+add_action('init', 'wpse_74054_add_author_woocommerce', 999 );
+
+function wpse_74054_add_author_woocommerce() {
+    add_post_type_support( 'product', 'author' );
+}
+
+add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
+ 
+add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
+ 
+add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+ 
+ 
+ 
+/**
+ * Hides the 'Free!' price notice
+ */
+function hide_free_price_notice( $price ) {
+ 
+  return '';
+}
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/

@@ -364,7 +364,7 @@ function woocommerce_cart_link() {
 		<span>
 	<?php
 	echo $woocommerce->cart->get_cart_total();
-	echo '<span class="contents">' . sprintf(_n('%d item', '%d items', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . '</span>';
+	echo '<span class="contents">' . sprintf(_n('%d', '%d', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . '</span>';
 	?>
 	</span>
 	</a>

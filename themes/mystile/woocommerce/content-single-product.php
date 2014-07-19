@@ -39,8 +39,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	?>
 
 	<div class="summary entry-summary">
-<h4><?php the_author() ?></h4>
-<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
+
+		<div style="float: left; width: 40px; border-radius: 50%;"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
+		<h4><?php the_author_posts_link(); ?></p></h4>
+		<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
+
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook
