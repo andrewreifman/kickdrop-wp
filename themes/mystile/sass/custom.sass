@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6
   font-family: "Source Sans Pro", sans-serif
 
 h1
-  font-size: 48px
+  font-size: 44px
   font-weight: 600
   letter-spacing: -0.03em
   margin: 0 0 15px
@@ -166,6 +166,24 @@ h1
   width: 100%
 
 /*-----------------------------------------------------------------------------------*/
+/*  Buttons
+/*-----------------------------------------------------------------------------------*/
+a.button, button.button, button.button.alt, a.button.alt, .button a
+  box-shadow: none
+  text-shadow: none
+  font-family: "Source Sans Pro", sans-serif
+  font-weight: 600
+  font-size: 15px
+  border: 1px solid #bec2c2
+  border-radius: 4px
+  padding: 8px 12px 9px
+  color: #555555
+
+  &:hover
+    color: #000
+    background: #fff
+
+/*-----------------------------------------------------------------------------------*/
 /*  Forms
 /*-----------------------------------------------------------------------------------*/
 select
@@ -199,7 +217,7 @@ ul.products
 
   > li.product
     width: 33.33%
-    margin: 0 0 30px
+    margin: 0 0 30px !important
     padding: 0 15px
     text-align: left
 
@@ -250,6 +268,65 @@ ul.products
         h3
           color: #000
           opacity: .4
+
+/*-----------------------------------------------------------------------------------*/
+/*  Drop detail
+/*-----------------------------------------------------------------------------------*/
+.single-product
+  h1
+    margin-bottom: 40px
+
+  .images
+    width: 100%
+    padding-right: 300px
+    float: none
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 300px
+      height: 100%
+      z-index: 10
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.15)
+      border-radius: 6px
+
+    img
+      padding: 0
+      border: 0
+      display: block
+      margin: 0
+      border-radius: 6px
+
+  .summary
+    float: right
+    width: 250px
+    position: relative
+    z-index: 10
+
+    table.variations
+      margin: 0
+
+    .price
+      font-size: 30px !important
+      font-weight: 600 !important
+      color: #777 !important
+      letter-spacing: -.02em
+      margin-bottom: 20px !important
+
+    .single_add_to_cart_button
+      width: 100%
+      background: $blue
+      color: #fff
+      font-size: 18px
+      margin: 0
+      border: 0
+
+      &:hover
+        color: #fff
+        background: darken($blue,4%)
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes
