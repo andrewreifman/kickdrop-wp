@@ -25,5 +25,7 @@
 
 $author_posts = get_posts( $args );?>
 </div>
+
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
