@@ -173,6 +173,17 @@ function woo_remove_category_products_count() {
 
 }
 
+// Modify the default WooCommerce orderby dropdown
+//
+// Options: menu_order, popularity, rating, date, price, price-desc
+function my_woocommerce_catalog_orderby( $orderby ) {
+    unset($orderby["price"]);
+    unset($orderby["price-desc"]);
+        unset($orderby["rating"]);
+    return $orderby;
+}
+add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
+
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/
