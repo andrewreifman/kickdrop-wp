@@ -28,20 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<h1><?php the_title(); ?></h1>
-
-	<div class="summary entry-summary">
-		<?php woocommerce_template_single_add_to_cart(); ?>
-		<p><?php the_field('download'); ?></p>
-		<div class="button"><a href="<?php the_field('demo'); ?>" class="btn" target="_blank">Demo</a></div>
-		<div class="button"><?if( function_exists('zilla_likes') ) zilla_likes();?></div>
-
-		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
-		<h4><?php the_author_posts_link(); ?></h4>
-
-		<p><?php the_field('browser_support'); ?></p>
-	</div><!-- .summary -->
-
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook
@@ -51,6 +37,33 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
+
+	<div class="summary entry-summary">
+
+		<div style="float: left; width: 40px; border-radius: 50%;"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
+		<h4><?php the_author_posts_link(); ?></p></h4>
+		<p><?if( function_exists('zilla_likes') ) zilla_likes();?></p>
+
+		<?php
+			/**
+			 * woocommerce_single_product_summary hook
+			 *
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 */
+
+			do_action( 'woocommerce_single_product_summary' );
+		?>
+                
+<p><?php the_field('demo'); ?></p>
+<p><?php the_field('github'); ?></p>
+<p><?php the_field('browser_support'); ?></p>
+	</div><!-- .summary -->
 
 	<?php
 		/**
