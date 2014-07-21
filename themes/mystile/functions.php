@@ -177,9 +177,8 @@ function woo_remove_category_products_count() {
 //
 // Options: menu_order, popularity, rating, date, price, price-desc
 function my_woocommerce_catalog_orderby( $orderby ) {
-    unset($orderby["price"]);
-    unset($orderby["price-desc"]);
-        unset($orderby["rating"]);
+    unset($orderby["default"]);
+    unset($orderby["rating"]);
     return $orderby;
 }
 add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
