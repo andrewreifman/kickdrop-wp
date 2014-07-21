@@ -32,12 +32,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<div class="summary entry-summary">
 		<?php woocommerce_template_single_add_to_cart(); ?>
-		<p><?php the_field('download'); ?></p>
-		<div class="button"><a href="<?php the_field('demo'); ?>" class="btn" target="_blank">Demo</a></div>
-		<div class="button"><?if( function_exists('zilla_likes') ) zilla_likes();?></div>
+		<?php the_field('download'); ?>
+
+		<div class="demo-like clearfix">
+			<div class="button demo"><a href="<?php the_field('demo'); ?>" class="btn" target="_blank">Demo</a></div>
+			<div class="button likes"><?if( function_exists('zilla_likes') ) zilla_likes();?></div>
+		</div>
+
+		<?php woocommerce_template_single_rating(); ?>
 
 		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
-		<h4><?php the_author_posts_link(); ?></h4>
+		<h4 class="author"><?php the_author_posts_link(); ?></h4>
 
 		<p><?php the_field('browser_support'); ?></p>
 	</div><!-- .summary -->

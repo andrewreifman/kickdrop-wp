@@ -154,7 +154,6 @@ h1
         &:hover
           color: #333
 
-
 /*-----------------------------------------------------------------------------------*/
 /*  Global
 /*-----------------------------------------------------------------------------------*/
@@ -176,16 +175,20 @@ a.button, button.button, button.button.alt, a.button.alt, .button a
   font-size: 15px
   border: 1px solid #bec2c2
   border-radius: 4px
-  padding: 8px 12px 9px
+  padding: 8px 12px
   color: #555555
+  text-align: center
 
   &:hover
     color: #000
-    background: #fff
+    background-color: #fff
 
 /*-----------------------------------------------------------------------------------*/
 /*  Forms
 /*-----------------------------------------------------------------------------------*/
+form
+  margin: 0
+
 select
   font-family: "Source Sans Pro", sans-serif
   height: 34px
@@ -217,9 +220,10 @@ ul.products
 
   > li.product
     width: 33.33%
-    margin: 0 0 30px !important
+    margin: 0 0 35px !important
     padding: 0 15px
     text-align: left
+    clear: none !important
 
     .thumbnail
       border-radius: 6px
@@ -252,12 +256,32 @@ ul.products
       letter-spacing: -.02em
       margin-left: 15px
 
+      ins
+        margin-left: 6px
+        color: $red
+
     h3
       font-weight: 600
       font-size: 17px
       text-overflow: ellipsis
       white-space: nowrap
       overflow: hidden
+      margin-bottom: 2px
+
+    .avatar
+      display: inline-block
+      margin-right: 5px
+      vertical-align: middle
+
+      img
+        border-radius: 50%
+        width: 30px
+        margin: 0
+
+    .author
+      display: inline-block
+      vertical-align: middle
+      margin: 0
 
     .star-rating
       display: none
@@ -267,7 +291,7 @@ ul.products
       &:hover
         h3
           color: #000
-          opacity: .4
+          opacity: .5
 
 /*-----------------------------------------------------------------------------------*/
 /*  Drop detail
@@ -275,6 +299,9 @@ ul.products
 .single-product
   h1
     margin-bottom: 40px
+
+  .onsale
+    display: none
 
   .images
     width: 100%
@@ -307,26 +334,91 @@ ul.products
     z-index: 10
 
     table.variations
-      margin: 0
+      margin: 0 0 5px
+
+      td
+        padding: 0
+        vertical-align: middle
+
+        &.label
+          padding-right: 20px
+          width: 60px
+          color: #000
+
+        &.value
+          select
+            float: right
+            width: 100%
+
+      .reset_variations
+        display: none !important
 
     .price
-      font-size: 30px !important
+      font-size: 36px !important
       font-weight: 600 !important
       color: #777 !important
       letter-spacing: -.02em
-      margin-bottom: 20px !important
+      margin-bottom: 5px !important
+
+      ins
+        margin-left: 12px
+        color: $red
+        font-weight: 600
 
     .single_add_to_cart_button
       width: 100%
       background: $blue
       color: #fff
       font-size: 18px
-      margin: 0
+      margin: 0 0 15px
       border: 0
 
       &:hover
         color: #fff
         background: darken($blue,4%)
+
+    .demo-like
+      margin-bottom: 30px
+      .button
+        width: 120px
+
+        a
+          display: block
+
+        &.demo
+          float: left
+        &.likes
+          float: right
+
+    .zilla-likes
+      border: 1px solid #bec2c2 !important
+      margin: 0
+      font-size: 17px
+      height: 42px
+      padding-top: 6px
+      padding-left: 62px
+      background: url(images/heart.png) no-repeat 34px center
+      text-align: left
+
+      &:hover, &.active
+        background-image: url(images/heart-active.png)
+        padding-left: 62px !important
+        margin: 0 !important
+
+      &:hover
+        background-color: #fff
+
+    .star-rating
+      margin-bottom: 30px
+      font-size: 20px
+      letter-spacing: .1em
+      width: 114px
+
+      span:before
+        color: #eeab2b
+
+      &:before
+        color: #d1d5d5
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes
