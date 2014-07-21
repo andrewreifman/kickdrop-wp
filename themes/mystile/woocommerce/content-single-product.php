@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		</div>
 
 		<div class="reviews">
-			<?php woocommerce_product_reviews_tab(); ?>
+			<?php woocommerce_output_product_data_tabs(); ?>
 		</div>
 	</div><!-- .drop-left-col -->
 
