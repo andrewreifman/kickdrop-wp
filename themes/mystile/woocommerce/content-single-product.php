@@ -41,33 +41,41 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<?php woocommerce_template_single_rating(); ?>
 
-		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
-		<h4 class="author"><?php the_author_posts_link(); ?></h4>
+		<div class="more-info">
+			<div class="author">
+				<div class="avatar-thumb"><?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?></div>
+				<h4><?php the_author(); ?></h4>
+				<a href="<?php the_author_posts_link(); ?>" class="button">View profile</a>
+			</div>
 
-		<?php woocommerce_template_single_category(); ?>
-		<?php woocommerce_template_single_tags(); ?>
-		<p><?php the_field('browser_support'); ?></p>
+			<ul class="specs">
+				<li class="category"><?php woocommerce_template_single_category(); ?></li>
+				<li class="count"><?php wc_product_sold_count(); ?></li>
+				<li class="date"><?php echo get_the_date(); ?></li>
+				<li class="files"><?php the_field('files'); ?></li>
+				<li class="browser"><?php the_field('browser_support'); ?></li>
+			</ul>
+		</div>
+
+		<div class="tags">
+			<?php woocommerce_template_single_tags(); ?>
+		</div>
+
 	</div><!-- .summary -->
 
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
+	<div class="drop-left-col">
+		<?php woocommerce_show_product_images(); ?>
 
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		do_action( 'woocommerce_after_single_product_summary' );
-	?>
+		<div class="description">
+			<?php woocommerce_product_description_tab(); ?>
+		</div>
+
+		<div class="reviews">
+			<?php woocommerce_product_reviews_tab(); ?>
+		</div>
+	</div><!-- .drop-left-col -->
+
+	<?php woocommerce_output_related_products(); ?>
 
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />

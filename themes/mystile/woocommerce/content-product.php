@@ -64,7 +64,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 		<h3><?php the_title(); ?></h3>
 
-		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
+		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?></div>
 		<h4 class="author"><?php the_author() ?></h4>
 
 	</a>

@@ -1010,13 +1010,13 @@ if ( ! function_exists( 'woocommerce_default_product_tabs' ) ) {
 		}
 
 		// Additional information tab - shows attributes
-		if ( $product && ( $product->has_attributes() || ( $product->enable_dimensions_display() && ( $product->has_dimensions() || $product->has_weight() ) ) ) ) {
-			$tabs['additional_information'] = array(
-				'title'    => __( 'Additional Information', 'woocommerce' ),
-				'priority' => 20,
-				'callback' => 'woocommerce_product_additional_information_tab'
-			);
-		}
+		// if ( $product && ( $product->has_attributes() || ( $product->enable_dimensions_display() && ( $product->has_dimensions() || $product->has_weight() ) ) ) ) {
+		// 	$tabs['additional_information'] = array(
+		// 		'title'    => __( 'Additional Information', 'woocommerce' ),
+		// 		'priority' => 20,
+		// 		'callback' => 'woocommerce_product_additional_information_tab'
+		// 	);
+		// }
 
 		// Reviews tab - shows comments
 		if ( comments_open() ) {

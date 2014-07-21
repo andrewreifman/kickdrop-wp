@@ -98,7 +98,7 @@ add_action( 'woocommerce_single_product_summary', 'wc_product_sold_count', 11 );
 function wc_product_sold_count() {
 	global $product;
 	$units_sold = get_post_meta( $product->id, 'total_sales', true );
-	echo '<p>' . sprintf( __( 'Units Sold: %s', 'woocommerce' ), $units_sold ) . '</p>';
+	echo sprintf( __( '%s downloads', 'woocommerce' ), $units_sold );
 }
 
 
@@ -135,7 +135,7 @@ function wc_wc20_variation_price_format( $price, $product ) {
 	$prices = array( $product->get_variation_regular_price( 'min', true ), $product->get_variation_regular_price( 'max', true ) );
 	sort( $prices );
 	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( '%1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
- 
+
 	if ( $price !== $saleprice ) {
 		$price = '<del>' . $saleprice . '</del> <ins>' . $price . '</ins>';
 	}
@@ -149,18 +149,18 @@ function wpse_74054_add_author_woocommerce() {
 }
 
 add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
- 
+
 add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
- 
+
 add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
- 
- 
- 
+
+
+
 /**
  * Hides the 'Free!' price notice
  */
 function hide_free_price_notice( $price ) {
- 
+
   return '';
 }
 
