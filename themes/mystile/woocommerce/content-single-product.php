@@ -44,6 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?></div>
 		<h4 class="author"><?php the_author_posts_link(); ?></h4>
 
+		<?php woocommerce_template_single_category(); ?>
+		<?php woocommerce_template_single_tags(); ?>
 		<p><?php the_field('browser_support'); ?></p>
 	</div><!-- .summary -->
 

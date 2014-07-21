@@ -59,10 +59,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-                
-<p><?php the_field('demo'); ?></p>
-<p><?php the_field('github'); ?></p>
-<p><?php the_field('browser_support'); ?></p>
+
+		<p><?php the_field('demo'); ?></p>
+		<p><?php the_field('github'); ?></p>
+		<p><?php the_field('browser_support'); ?></p>
 	</div><!-- .summary -->
 
 	<?php
