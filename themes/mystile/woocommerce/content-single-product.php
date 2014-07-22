@@ -26,9 +26,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 }
 ?>
 
+<h1><?php the_title(); ?></h1>
+
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<h1><?php the_title(); ?></h1>
+	<div class="drop-left-col">
+		<?php woocommerce_show_product_images(); ?>
+
+		<?php woocommerce_output_product_data_tabs(); ?>
+	</div><!-- .drop-left-col -->
 
 	<div class="summary entry-summary">
 		<?php woocommerce_template_single_add_to_cart(); ?>
@@ -62,18 +68,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		</div>
 
 	</div><!-- .summary -->
-
-	<div class="drop-left-col">
-		<?php woocommerce_show_product_images(); ?>
-
-		<div class="description">
-			<?php woocommerce_product_description_tab(); ?>
-		</div>
-
-		<div class="reviews">
-			<?php woocommerce_output_product_data_tabs(); ?>
-		</div>
-	</div><!-- .drop-left-col -->
 
 	<?php woocommerce_output_related_products(); ?>
 

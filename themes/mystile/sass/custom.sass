@@ -318,7 +318,7 @@ ul.products
     width: 100%
     float: none
     position: relative
-    margin-bottom: 30px
+    margin-bottom: 50px
 
     &:after
       content: ""
@@ -338,18 +338,65 @@ ul.products
       margin: 0
       border-radius: 6px
 
-  .description
-    p
-      margin-bottom: 25px
-      font-family: georgia, serif
-      font-size: 16px
-      line-height: 1.6
-      -webkit-font-smoothing: antialiased
+  .woocommerce-tabs
+    clear: none
+
+    ul.tabs
+      margin: 0
+      padding-left: 15px
+      border-bottom: 1px solid #bec2c2
+      height: 44px
+
+      &:after
+        content: ""
+
+      li
+        margin-right: 4px
+        &:before
+          display: none
+        &.active
+          a
+            border-color: #bec2c2
+            border-bottom: 0
+            box-shadow: none
+            color: $blue
+
+            &:hover, &:after
+              background-color: #eef2f2
+
+        a
+          background-color: #eef2f2
+          border: 1px solid transparent
+          font-weight: 600
+          font-size: 15px
+          padding: 10px 20px
+          border-radius: 4px 4px 0 0
+          height: 43px
+
+          &:hover
+            color: $blue
+            background-color: rgba(0,0,0,.03)
+
+          &:before
+            display: none
+
+    .panel
+      background-color: transparent
+      border: 0
+      padding: 25px 0 0 0
+
+      p
+        margin-bottom: 25px
+        font-family: georgia, serif
+        font-size: 16px
+        line-height: 1.6
+        -webkit-font-smoothing: antialiased
 
   .summary
-    float: right
+    position: absolute
+    top: 0
+    right: 0
     width: 250px
-    position: relative
     z-index: 10
 
     table.variations
@@ -519,6 +566,44 @@ ul.products
 
   &:before
     color: #d1d5d5
+
+#comments .commentlist
+  border: 0
+  padding: 0
+  margin-bottom: 25px
+
+  li.comment
+    border-bottom: 1px solid #d8dddd
+    margin: 0
+    padding: 25px 0
+
+    .comment_container
+      img.avatar
+        width: 50px
+
+      .comment-text
+        width: auto
+        float: none !important
+        padding-left: 70px
+
+      h3
+        font-family: "Source Sans Pro", sans-serif
+        font-weight: 600
+        color: #555
+        font-size: 18px
+        margin-bottom: 5px
+
+      p
+        margin-bottom: 12px
+
+      time
+        font-size: 12px
+        color: #999
+        font-weight: 600
+
+#respond
+  width: 100%
+  float: none
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes

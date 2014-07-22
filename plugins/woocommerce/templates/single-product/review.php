@@ -35,18 +35,19 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 			<?php else : ?>
 
-				<p class="meta">
-					<strong itemprop="author"><?php comment_author(); ?></strong> <?php
-
+				<h3 class="meta">
+					<?php comment_author(); ?>
+					<?php
 						if ( get_option( 'woocommerce_review_rating_verification_label' ) === 'yes' )
 							if ( wc_customer_bought_product( $comment->comment_author_email, $comment->user_id, $comment->comment_post_ID ) )
 								echo '<em class="verified">(' . __( 'verified owner', 'woocommerce' ) . ')</em> ';
-
-					?>&ndash; <time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( __( get_option( 'date_format' ), 'woocommerce' ) ); ?></time>:
-				</p>
+					?>
+				</h3>
 
 			<?php endif; ?>
 
 			<div itemprop="description" class="description"><?php comment_text(); ?></div>
+
+			<time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( __( get_option( 'date_format' ), 'woocommerce' ) ); ?></time>
 		</div>
 	</div>
