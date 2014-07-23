@@ -1,6 +1,6 @@
 $orange: #ef9544
 $blue: #32b9b1
-$green: #51be38
+$green: #6ecd44
 $red: #f05a5b
 
 *
@@ -11,6 +11,7 @@ body
   font-family: "Source Sans Pro", sans-serif
   background-color: #eef2f2
   padding: 0
+  font-size: 15px
   color: #000
 
 h1, h2, h3, h4, h5, h6
@@ -172,6 +173,32 @@ a
 #main
   width: 100%
 
+.woocommerce_message, .woocommerce_info, .woocommerce_error, .woocommerce-message, .woocommerce-info, .woocommerce-error
+  padding: 10px 10px 10px 15px
+  font-size: 15px
+  margin: 10px 0 30px
+  border: 0
+  border-radius: 5px
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15)
+  width: 100%
+  float: left
+  font-weight: 600
+
+  &:before
+    display: none
+
+  p
+    margin: 0
+    padding: 6px 0
+
+.woocommerce_message, .woocommerce-message
+  background-color: #dff0d8
+  color: #3c763d
+
+.woocommerce_error, .woocommerce-error
+  background-color: lighten($red,30%)
+  color: darken($red,30%)
+
 /*-----------------------------------------------------------------------------------*/
 /*  Buttons
 /*-----------------------------------------------------------------------------------*/
@@ -184,7 +211,7 @@ a.button, button.button, button.button.alt, a.button.alt, .button a
   font-size: 15px
   border: 1px solid #bec2c2
   border-radius: 4px
-  padding: 8px 12px
+  padding: 8px 15px
   color: #555555
   text-align: center
   margin: 0
@@ -193,11 +220,38 @@ a.button, button.button, button.button.alt, a.button.alt, .button a
     color: #000
     background: #fff
 
+  &:active
+    box-shadow: none
+
+  &.blue
+    background: $blue
+    border: 0
+    color: #fff
+
+    &:hover
+      background: darken($blue,4%)
+
+  &.green
+    background: $green
+    border: 0
+    color: #fff
+
+    &:hover
+      background: darken($green,5%)
+
 /*-----------------------------------------------------------------------------------*/
 /*  Forms
 /*-----------------------------------------------------------------------------------*/
 form
   margin: 0
+
+.form-group
+  margin-bottom: 15px
+
+label
+  display: inline-block
+  margin-bottom: 6px
+  font-weight: 600
 
 select
   font-family: "Source Sans Pro", sans-serif
@@ -210,6 +264,55 @@ select
   background-image: none
   border: 1px solid #ccc
   border-radius: 4px
+
+input[type=text], input.input-text, textarea, input.txt, input[type=tel], input[type=email]
+  box-shadow: none
+  border-radius: 4px
+  border-color: #ccc
+  padding: 8px 12px
+  font-size: 14px
+  width: 100%
+  margin: 0
+  background-color: #fff
+
+  &:focus
+    border-color: $blue
+    box-shadow: none
+
+#commentform #submit, .submit, input[type=submit]
+  box-shadow: none
+  text-shadow: none
+  background: $blue
+  font-family: "Source Sans Pro", sans-serif
+  font-weight: 600
+  font-size: 15px
+  border: 0
+  border-radius: 4px
+  padding: 8px 20px
+  color: #fff
+  text-align: center
+  margin: 0
+
+  &:hover
+    background: darken($blue,4%)
+
+/*-----------------------------------------------------------------------------------*/
+/*  Tables
+/*-----------------------------------------------------------------------------------*/
+table
+  margin-bottom: 20px
+
+  th
+    text-transform: none
+    border-bottom: 2px solid #d8dddd
+    font-size: 16px
+    font-weight: 600
+    color: #666
+    padding: 10px 15px
+
+  td
+    border-bottom: 1px solid #d8dddd
+    padding: 15px
 
 /*-----------------------------------------------------------------------------------*/
 /*  Shop main
@@ -357,8 +460,9 @@ ul.products
             border-color: #bec2c2
             border-bottom: 0
             box-shadow: none
-            color: $blue
-
+            color: #555
+            &:hover
+              color: #555
             &:hover, &:after
               background-color: #eef2f2
 
@@ -372,7 +476,7 @@ ul.products
           height: 43px
 
           &:hover
-            color: $blue
+            color: #000
             background-color: rgba(0,0,0,.03)
 
           &:before
@@ -390,6 +494,9 @@ ul.products
           font-size: 16px
           line-height: 1.6
           -webkit-font-smoothing: antialiased
+
+      &#tab-reviews
+        padding-top: 10px
 
   .summary
     position: absolute
@@ -509,8 +616,44 @@ ul.products
 
     .specs
       list-style: none
-      padding: 15px
+      padding: 15px 15px 5px
       margin: 0
+
+      li
+        margin-bottom: 12px
+        display: table
+        line-height: 1.4
+
+        span
+          display: table-cell
+
+        .sprite
+          background-image: url(images/specs-sprite.png)
+          background-repeat: no-repeat
+          background-size: 22px 100px
+          display: inline-block
+          vertical-align: middle
+          width: 22px
+          height: 20px
+          margin-right: 15px
+
+        .sprite-browser
+          background-position: 0 0
+
+        .sprite-calendar
+          background-position: 0 -20px
+
+        .sprite-downloads
+          background-position: 0 -40px
+
+        .sprite-folder
+          background-position: 0 -60px
+
+        .sprite-tag
+          background-position: 0 -80px
+
+        span
+          vertical-align: middle
 
     .tags a
       display: inline-block
@@ -574,7 +717,7 @@ ul.products
   li.comment
     border-bottom: 1px solid #d8dddd
     margin: 0
-    padding: 20px 0
+    padding: 15px 0
 
     .comment_container
       img.avatar
@@ -627,6 +770,99 @@ ul.products
 
     &:hover:after, &.active:after
       color: #eeab2b
+
+.gist .gist-file
+  border-bottom: 1px solid #ddd !important
+
+  .gist-data
+    border-bottom: 0 !important
+
+  .gist-meta
+    display: none
+
+/*-----------------------------------------------------------------------------------*/
+/*  Cart
+/*-----------------------------------------------------------------------------------*/
+table.cart
+  td.product-remove
+    vertical-align: middle
+
+    a.remove
+      font-size: 18px
+      color: #aaa
+
+  .product-thumbnail
+    a
+      position: relative
+      display: inline-block
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: block
+        z-index: 10
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.15)
+        border-radius: 4px
+
+    img
+      width: 100px
+      padding: 0
+      background-color: transparent
+      border: 0
+      border-radius: 4px
+
+  .product-name
+    a
+      font-size: 17px
+      font-weight: 600
+
+  dl.variation dt, dl.variation dd
+    margin-bottom: 0
+
+  p
+    margin-bottom: 0
+
+  td.product-price
+    font-size: 15px
+
+  .product-price
+    text-align: right
+
+  .order-total
+    td
+      text-align: right
+      font-size: 16px
+      font-weight: 600
+
+  .checkout-button
+    box-shadow: none
+    text-shadow: none
+    background: $blue
+    font-family: "Source Sans Pro", sans-serif
+    font-weight: 600
+    font-size: 17px
+    border: 0
+    border-radius: 4px
+    padding: 10px 24px
+    text-align: center
+    margin: 0
+
+    &:hover
+      background: darken($blue,4%)
+
+p.cart-empty
+  margin-top: 20px
+  font-size: 16px
+
+/*-----------------------------------------------------------------------------------*/
+/*  Checkout
+/*-----------------------------------------------------------------------------------*/
+.woocommerce-checkout
+  h1
+    margin-bottom: 40px
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes

@@ -17,14 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<table cellspacing="0">
 
-		<tr class="cart-subtotal">
-			<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_subtotal_html(); ?></td>
-		</tr>
-
 		<?php foreach ( WC()->cart->get_coupons( 'cart' ) as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( $code ); ?>">
-				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
+				<td><strong><?php wc_cart_totals_coupon_label( $coupon ); ?></strong></th>
 				<td><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
 		<?php endforeach; ?>
@@ -72,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php _e( 'Order Total', 'woocommerce' ); ?></th>
+			<td><strong><?php _e( 'Order total', 'woocommerce' ); ?></strong></td>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 

@@ -22,12 +22,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 <table class="shop_table cart" cellspacing="0">
 	<thead>
 		<tr>
-			<th class="product-remove">&nbsp;</th>
+			<th class="product-remove" width="50">&nbsp;</th>
 			<th class="product-thumbnail">&nbsp;</th>
 			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
 			<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-			<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -48,7 +46,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
-					<td class="product-thumbnail">
+					<td class="product-thumbnail" width="160">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
@@ -81,28 +79,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
-					<td class="product-quantity">
-						<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-							} else {
-								$product_quantity = woocommerce_quantity_input( array(
-									'input_name'  => "cart[{$cart_item_key}][qty]",
-									'input_value' => $cart_item['quantity'],
-									'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-									'min_value'   => '0'
-								), $_product, false );
-							}
-
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
-						?>
-					</td>
-
-					<td class="product-subtotal">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-						?>
-					</td>
 				</tr>
 				<?php
 			}
@@ -110,8 +86,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
+
+		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
+
+		<tr class="order-total">
+			<td colspan="3"><strong><?php _e( 'Order total', 'woocommerce' ); ?></strong></td>
+			<td><?php wc_cart_totals_order_total_html(); ?></td>
+		</tr>
+
+		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
+
 		<tr>
-			<td colspan="6" class="actions">
+			<td colspan="4" class="actions">
 
 				<?php if ( WC()->cart->coupons_enabled() ) { ?>
 					<div class="coupon">
@@ -123,7 +109,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> <input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
+				<input type="submit" class="checkout-button button green alt wc-forward" name="proceed" value="<?php _e( 'Proceed to checkout', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 
@@ -138,15 +124,5 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 
 </form>
-
-<div class="cart-collaterals">
-
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
-
-	<?php woocommerce_cart_totals(); ?>
-
-	<?php woocommerce_shipping_calculator(); ?>
-
-</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

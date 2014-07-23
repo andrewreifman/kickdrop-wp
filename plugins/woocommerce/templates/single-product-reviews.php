@@ -16,13 +16,6 @@ if ( ! comments_open() )
 ?>
 <div id="reviews">
 	<div id="comments">
-		<h2><?php
-			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_rating_count() ) )
-				printf( _n( '%s review', '%s reviews', $count, 'woocommerce' ), $count, get_the_title() );
-			else
-				_e( 'Reviews', 'woocommerce' );
-		?></h2>
-
 		<?php if ( have_comments() ) : ?>
 
 			<ol class="commentlist">

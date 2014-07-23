@@ -55,11 +55,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			</div>
 
 			<ul class="specs">
-				<li class="category"><?php woocommerce_template_single_category(); ?></li>
-				<li class="count"><?php wc_product_sold_count(); ?></li>
-				<li class="date"><?php echo get_the_date(); ?></li>
-				<li class="files"><?php the_field('files'); ?></li>
-				<li class="browser"><?php the_field('browser_support'); ?></li>
+				<li class="category"><span><i class="sprite sprite-tag"></i></span><span><?php woocommerce_template_single_category(); ?></span></li>
+				<li class="count"><span><i class="sprite sprite-downloads"></i></span><span><?php wc_product_sold_count(); ?></span></li>
+				<li class="date"><span><i class="sprite sprite-calendar"></i></span><span><?php echo get_the_date(); ?></span></li>
+				<li class="files"><span><i class="sprite sprite-folder"></i></span><span><?php the_field('files'); ?></span></li>
+				<li class="browser"><span><i class="sprite sprite-browser"></i></span><span><?php the_field('browser_support'); ?></span></li>
 			</ul>
 		</div>
 

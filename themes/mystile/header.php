@@ -23,6 +23,7 @@ global $woo_options, $woocommerce;
 <title><?php woo_title(''); ?></title>
 <?php woo_meta(); ?>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic" media="all" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php

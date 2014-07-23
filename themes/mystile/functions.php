@@ -155,15 +155,13 @@ add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
 add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
 
 
-
 /**
  * Hides the 'Free!' price notice
  */
 function hide_free_price_notice( $price ) {
 
-  return '';
+  return 'FREE';
 }
-
 
 
 add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
