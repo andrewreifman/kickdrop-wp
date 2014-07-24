@@ -64,10 +64,12 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 		<h3><?php the_title(); ?></h3>
 
-		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?></div>
-		<h4 class="author"><?php the_author() ?></h4>
-
 	</a>
+
+	<div class="author">
+		<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?></div>
+		<h4><?php the_author_posts_link(); ?> in <?php woocommerce_template_single_category(); ?></h4>
+	</div>
 
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
