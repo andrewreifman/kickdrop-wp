@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<div class="author">
 				<div class="avatar-thumb"><?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?></div>
 				<h4><?php the_author(); ?></h4>
-				<a href="<?php get_author_posts_url(); ?>" class="button">View profile</a>
+				<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" class="button">View profile</a>
 			</div>
 
 			<ul class="specs">
