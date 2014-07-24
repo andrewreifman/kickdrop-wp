@@ -13,22 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <?php if ( ! is_ajax() ) : ?><div id="order_review"><?php endif; ?>
 
 	<table class="shop_table">
-		<thead>
-			<tr>
-				<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
 		<tfoot>
-
-			<tr class="cart-subtotal">
-				<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
-				<td><?php wc_cart_totals_subtotal_html(); ?></td>
-			</tr>
-
 			<?php foreach ( WC()->cart->get_coupons( 'cart' ) as $code => $coupon ) : ?>
 				<tr class="cart-discount coupon-<?php echo esc_attr( $code ); ?>">
-					<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
+					<td><?php wc_cart_totals_coupon_label( $coupon ); ?></td>
 					<td><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 				</tr>
 			<?php endforeach; ?>
@@ -45,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 			<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 				<tr class="fee">
-					<th><?php echo esc_html( $fee->name ); ?></th>
+					<td><?php echo esc_html( $fee->name ); ?></td>
 					<td><?php wc_cart_totals_fee_html( $fee ); ?></td>
 				</tr>
 			<?php endforeach; ?>
@@ -54,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				<?php if ( get_option( 'woocommerce_tax_total_display' ) === 'itemized' ) : ?>
 					<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
 						<tr class="tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
-							<th><?php echo esc_html( $tax->label ); ?></th>
+							<td><?php echo esc_html( $tax->label ); ?></td>
 							<td><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
 						</tr>
 					<?php endforeach; ?>
@@ -76,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 			<tr class="order-total">
-				<th><?php _e( 'Order Total', 'woocommerce' ); ?></th>
+				<td><strong><?php _e( 'Order total', 'woocommerce' ); ?></strong></td>
 				<td><?php wc_cart_totals_order_total_html(); ?></td>
 			</tr>
 

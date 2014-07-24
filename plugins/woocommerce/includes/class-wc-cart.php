@@ -93,7 +93,7 @@ class WC_Cart {
 		$this->dp                    = absint( get_option( 'woocommerce_price_num_decimals' ) );
 		$this->display_totals_ex_tax = $this->tax_display_cart == 'excl';
 		$this->display_cart_ex_tax   = $this->tax_display_cart == 'excl';
-		
+
 		// Array of data the cart calculates and stores in the session with defaults
 		$this->cart_session_data = array(
 			'cart_contents_total'     => 0,
@@ -306,7 +306,7 @@ class WC_Cart {
 			// Check item stock
 			$result = $this->check_cart_item_stock();
 
-			if ( is_wp_error( $result ) ) { 
+			if ( is_wp_error( $result ) ) {
 				wc_add_notice( $result->get_error_message(), 'error' );
 			}
 		}
@@ -781,10 +781,10 @@ class WC_Cart {
 
 			// Load cart item data - may be added by other plugins
 			$cart_item_data = (array) apply_filters( 'woocommerce_add_cart_item_data', $cart_item_data, $product_id, $variation_id );
-			
+
 			// Generate a ID based on product ID, variation ID, variation data, and other cart item data
 			$cart_id        = $this->generate_cart_id( $product_id, $variation_id, $variation, $cart_item_data );
-			
+
 			// See if this product and its options is already in the cart
 			$cart_item_key  = $this->find_product_in_cart( $cart_id );
 
@@ -793,7 +793,7 @@ class WC_Cart {
 				$variation_id = $product_id;
 				$product_id   = wp_get_post_parent_id( $variation_id );
 			}
-			
+
 			// Get the product
 			$product_data   = get_product( $variation_id ? $variation_id : $product_id );
 
@@ -830,7 +830,7 @@ class WC_Cart {
 				// If it's greater than 0, it's already in the cart
 				if ( $in_cart_quantity > 0 ) {
 					wc_add_notice( sprintf(
-						'<a href="%s" class="button wc-forward">%s</a> %s',
+						'<a href="%s" class="button wc-forward">%s</a> <p>%s</p>',
 						$this->get_cart_url(),
 						__( 'View Cart', 'woocommerce' ),
 						sprintf( __( 'You cannot add another &quot;%s&quot; to your cart.', 'woocommerce' ), $product_data->get_title() )
@@ -849,7 +849,7 @@ class WC_Cart {
 
 					if ( isset( $product_qty_in_cart[ $variation_id ] ) && ! $product_data->has_enough_stock( $product_qty_in_cart[ $variation_id ] + $quantity ) ) {
 						wc_add_notice( sprintf(
-							'<a href="%s" class="button wc-forward">%s</a> %s',
+							'<a href="%s" class="button wc-forward">%s</a> <p>%s</p>',
 							$this->get_cart_url(),
 							__( 'View Cart', 'woocommerce' ),
 							sprintf( __( 'You cannot add that amount to the cart &mdash; we have %s in stock and you already have %s in your cart.', 'woocommerce' ), $product_data->get_stock_quantity(), $product_qty_in_cart[ $variation_id ] )
@@ -862,7 +862,7 @@ class WC_Cart {
 
 					if ( isset( $product_qty_in_cart[ $product_id ] ) && ! $product_data->has_enough_stock( $product_qty_in_cart[ $product_id ] + $quantity ) ) {
 						wc_add_notice( sprintf(
-							'<a href="%s" class="button wc-forward">%s</a> %s',
+							'<a href="%s" class="button wc-forward">%s</a> <p>%s</p>',
 							$this->get_cart_url(),
 							__( 'View Cart', 'woocommerce' ),
 							sprintf( __( 'You cannot add that amount to the cart &mdash; we have %s in stock and you already have %s in your cart.', 'woocommerce' ), $product_data->get_stock_quantity(), $product_qty_in_cart[ $product_id ] )
@@ -994,7 +994,7 @@ class WC_Cart {
 				// Prices
 				$base_price = $_product->get_price();
 				$line_price = $_product->get_price() * $values['quantity'];
-				
+
 				$line_subtotal = 0;
 				$line_subtotal_tax = 0;
 
@@ -1368,7 +1368,7 @@ class WC_Cart {
 
 		/**
 		 * Should the shipping address form be shown
-		 * 
+		 *
 		 * @return bool
 		 */
 		function needs_shipping_address() {
@@ -1515,7 +1515,7 @@ class WC_Cart {
 									$usage_count = 0;
 								}
 							}
-							
+
 							foreach ( $check_emails as $check_email ) {
 								$usage_count = $usage_count + sizeof( array_keys( $used_by, $check_email ) );
 							}
@@ -1892,7 +1892,7 @@ class WC_Cart {
 						// Get tax rates
 						$tax_rates = $this->tax->get_rates( $fee->tax_class );
 						$fee_taxes = $this->tax->calc_tax( $fee->amount, $tax_rates, false );
-						
+
 						if ( ! empty( $fee_taxes ) ) {
 							// Set the tax total for this fee
 							$this->fees[ $fee_key ]->tax = array_sum( $fee_taxes );

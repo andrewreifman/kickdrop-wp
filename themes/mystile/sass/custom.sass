@@ -28,6 +28,9 @@ h1
 p
   font-size: 15px
 
+td
+  font-size: 15px
+
 a
   color: #000
   &:hover
@@ -191,7 +194,7 @@ a
 
   p
     margin: 0
-    padding: 6px 0
+    padding: 8px 0
 
 .woocommerce_message, .woocommerce-message
   background-color: #dff0d8
@@ -200,6 +203,13 @@ a
 .woocommerce_error, .woocommerce-error
   background-color: lighten($red,30%)
   color: darken($red,30%)
+
+  .button
+    float: right
+
+.woocommerce_info, .woocommerce-info
+  background-color: lighten($blue,38%)
+  color: darken($blue,30%)
 
 /*-----------------------------------------------------------------------------------*/
 /*  Buttons
@@ -842,7 +852,11 @@ table.cart
 
     a.remove
       font-size: 18px
-      color: #aaa
+      color: #000
+      opacity: .2
+
+      &:hover
+        opacity: .4
 
   .product-thumbnail
     a
@@ -906,6 +920,9 @@ table.cart
     &:hover
       background: darken($blue,4%)
 
+  .actions
+    border-bottom: 0
+
 p.cart-empty
   margin-top: 20px
   font-size: 16px
@@ -925,6 +942,30 @@ p.cart-empty
 
     .payment_methods
       display: none
+
+    table
+      background: #fff
+      border: 1px solid #ccc
+      border-bottom: 1px solid #ccc
+      box-shadow: none
+
+      .order-total
+        td
+          font-size: 15px
+          border-bottom: 0
+
+    .form-row.place-order .button
+      background: $green
+      border: 0
+      box-shadow: none
+      text-shadow: none
+      padding: 10px 25px
+
+      &:hover
+        background: darken($green,5%)
+
+#account_password_field
+  width: 100%
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes
