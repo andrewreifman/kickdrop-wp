@@ -23,7 +23,7 @@ if ( 1 == $wp_query->found_posts || ! woocommerce_products_will_display() )
 				'rating'     => __( 'Sort by average rating', 'woocommerce' ),
 				'date'       => __( 'Sort by: Recent', 'woocommerce' ),
 				'price'      => __( 'Sort by price: low to high', 'woocommerce' ),
-				'price-desc' => __( 'Sort by price: high to low', 'woocommerce' )
+				'price-desc' => __( 'Sort by: Premium', 'woocommerce' )
 			) );
 
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' )

@@ -5,13 +5,12 @@
 
 <?php
 /**
- * The Template for displaying product archives, including the main shop page which is a post type archive.
+ * Template Name: Home
  *
- * Override this template by copying it to yourtheme/woocommerce/archive-product.php
+ * The blog page template displays the "blog-style" template on a sub-page. 
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @package WooFramework
+ * @subpackage Template
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -30,7 +29,7 @@ get_header( 'shop' ); ?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+			<h1 class="page-title">Beautifully Crafted Code</h1>
 
 		<?php endif; ?>
 

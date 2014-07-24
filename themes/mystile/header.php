@@ -40,8 +40,34 @@ global $woo_options, $woocommerce;
 	<div id="top">
 		<nav role="navigation" class="clearfix">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
-			<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav pull-right', 'theme_location' => 'top-menu' ) ); ?>
+
+<ul id="top-nav" class="nav pull-right">
+
+			<?php if ( is_user_logged_in() ) { ?>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
+    		<a href="<?php home_url(); ?>/?customer-logout=true">Logout</a></li>
+		<?php } else {   ?>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
+    	<a href="<?php home_url(); ?>/sign-up">Sign Up</a></li>
+
 			<?php } ?>
+
+		</ul>
+			<ul id="top-nav" class="nav pull-right">
+						<?php if ( is_user_logged_in() ) { ?>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+    	<a href="<?php home_url(); ?>/my-account">My Account</a></li>
+<?php } else {   ?>
+   <li class="menu-item">
+    <a href="<?php home_url(); ?>/my-account">Sign In</a></li>
+
+
+
+			<?php } ?>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page">
+					<a href="<?php home_url(); ?>/request-invite">Sell on Kickdrop</a></li>
+				</li>
+				</ul>
 		</nav>
 	</div><!-- /#top -->
 
@@ -64,6 +90,8 @@ global $woo_options, $woocommerce;
 				echo '</ul>';
 			}
 		?>
+
+<?php } ?>
 
     <?php woo_nav_before(); ?>
 
