@@ -25,16 +25,42 @@ h1
   margin: 0 0 15px
   line-height: 1.1
 
+h2
+  font-size: 26px
+  margin-bottom: 15px
+
+h3
+  font-size: 20px
+  margin-bottom: 10px
+
 p
   font-size: 15px
-
-td
-  font-size: 15px
+  margin-bottom: 15px
 
 a
   color: #000
   &:hover
     color: $blue
+
+ul
+  padding-left: 20px
+
+li
+  font-size: 15px
+
+dl
+  margin-bottom: 20px
+  dd
+    margin-bottom: 0
+
+    p
+      margin-bottom: 0
+
+dl.variation dt, dl.variation dd
+  float: none
+  display: inline-block
+  margin-right: 0
+  text-transform: capitalize
 
 /*-----------------------------------------------------------------------------------*/
 /*  Header/footer
@@ -48,7 +74,9 @@ a
   ul.nav > li a
     padding: 0 14px
     line-height: 40px
+    font-size: 12px
     color: #555
+    font-weight: 600
     &:hover
       color: #000
 
@@ -174,6 +202,7 @@ a
 #content
   max-width: 1020px
   padding: 0 15px
+  margin: 0 auto
 
 #main
   width: 100%
@@ -263,6 +292,9 @@ form
 .form-row
   margin-bottom: 15px
 
+  label
+    display: inline-block
+
 label
   display: inline-block
   margin-bottom: 6px
@@ -311,6 +343,23 @@ input[type=text], input.input-text, textarea, input.txt, input[type=tel], input[
   &:hover
     background: darken($blue,4%)
 
+input[type="checkbox"]
+  -webkit-appearance: checkbox
+  float: none !important
+  display: inline-block
+  margin-right: 8px
+  margin-top: 0
+  width: auto
+  height: auto
+  font-size: 20px
+
+input[type="checkbox"]:before, input[type="checkbox"]:checked:before
+  display: none
+
+.validate-required.woocommerce-validated input
+  border-color: $green
+  background: lighten($green,42%)
+
 /*-----------------------------------------------------------------------------------*/
 /*  Tables
 /*-----------------------------------------------------------------------------------*/
@@ -328,6 +377,7 @@ table
   td
     border-bottom: 1px solid #d8dddd
     padding: 15px
+    font-size: 15px
 
 /*-----------------------------------------------------------------------------------*/
 /*  Shop main
@@ -345,6 +395,7 @@ ul.products
   margin-left: -15px !important
   margin-right: -15px
   margin-bottom: 30px
+  padding: 0
 
   > li.product
     width: 33.33%
@@ -399,9 +450,21 @@ ul.products
     .avatar
       float: left
       margin-right: 8px
+      position: relative
+
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 10
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.1)
+        border-radius: 2px
 
       img
-        border-radius: 50%
+        border-radius: 2px
         width: 22px
         margin: 0
 
@@ -660,6 +723,19 @@ ul.products
       .avatar-thumb
         float: left
         margin-right: 12px
+        position: relative
+
+        &:after
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          z-index: 10
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,.1)
+          border-radius: 4px
+
         img
           border-radius: 4px
 
@@ -683,6 +759,7 @@ ul.products
         margin-bottom: 12px
         display: table
         line-height: 1.4
+        font-size: 14px
 
         span
           display: table-cell
@@ -964,8 +1041,95 @@ p.cart-empty
       &:hover
         background: darken($green,5%)
 
+  .create-account p:first-child
+    padding: 10px 15px
+    font-weight: 400
+    margin-bottom: 15px
+    background-color: #bfeeeb
+    border-radius: 5px
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15)
+    color: #11413e
+    font-size: 13px
+    border: 0 !important
+    &:before
+      display: none
+
 #account_password_field
   width: 100%
+
+/*-----------------------------------------------------------------------------------*/
+/*  Order receipt
+/*-----------------------------------------------------------------------------------*/
+ul.order_details
+  border-color: rgba(0,0,0,.15)
+  border-radius: 4px
+  margin-bottom: 30px
+
+  &:before
+    color: $green
+
+  li
+    color: #666
+    border-color: rgba(0,0,0,.15)
+
+    strong
+      color: #000
+      font-weight: 600
+
+table.order_details
+  border-top: 1px solid #d8dddd
+
+  td.product-name
+    a
+      pointer-events: none
+
+      &.button
+        pointer-events: auto
+        margin-bottom: 5px
+        padding: 10px 20px
+
+/*-----------------------------------------------------------------------------------*/
+/*  Author
+/*-----------------------------------------------------------------------------------*/
+.profile-header
+  width: 100%
+  margin-bottom: 40px
+  padding-bottom: 25px
+  border-bottom: 1px solid #d8dddd
+
+  .avatar
+    float: left
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 10
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.12)
+      border-radius: 5px
+
+    img
+      border-radius: 5px
+
+  .profile-info
+    padding-left: 130px
+    padding-right: 150px
+
+    h1
+      font-size: 28px
+
+    p.website
+      margin-bottom: 10px
+
+      i
+        font-size: 22px
+        vertical-align: middle
+        margin-right: 10px
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes
