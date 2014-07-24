@@ -174,11 +174,23 @@ function woo_remove_category_products_count() {
 //
 // Options: menu_order, popularity, rating, date, price, price-desc
 function my_woocommerce_catalog_orderby( $orderby ) {
+	unset($orderby["menu_order"]);
+	unset($orderby["price"]);
+	unset($orderby["price-desc"]);
     unset($orderby["default"]);
     unset($orderby["rating"]);
     return $orderby;
 }
 add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
+
+/**
+ * This code should be added to functions.php of your theme
+ **/
+add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');
+ 
+function custom_default_catalog_orderby() {
+     return 'date'; // Can also use title and price
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
