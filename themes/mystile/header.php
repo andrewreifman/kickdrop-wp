@@ -41,33 +41,32 @@ global $woo_options, $woocommerce;
 		<nav role="navigation" class="clearfix">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
 
-<ul id="top-nav" class="nav pull-right">
+				<ul id="top-nav" class="nav pull-right">
 
-			<?php if ( is_user_logged_in() ) { ?>
-    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
-    		<a href="<?php home_url(); ?>/?customer-logout=true">Logout</a></li>
-		<?php } else {   ?>
-    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
-    	<a href="<?php home_url(); ?>/sign-up">Sign Up</a></li>
+					<?php if ( is_user_logged_in() ) { ?>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page">
+							<a href="<?php home_url(); ?>/my-account">My Account</a>
+						</li>
 
-			<?php } ?>
+			    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
+			    		<a href="<?php home_url(); ?>/?customer-logout=true">Logout</a>
+			    	</li>
 
-		</ul>
-			<ul id="top-nav" class="nav pull-right">
-						<?php if ( is_user_logged_in() ) { ?>
-    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-    	<a href="<?php home_url(); ?>/my-account">My Account</a></li>
-<?php } else {   ?>
-   <li class="menu-item">
-    <a href="<?php home_url(); ?>/my-account">Sign In</a></li>
+					<?php } else { ?>
+					 	<li class="menu-item">
+					  	<a href="<?php home_url(); ?>/my-account">Sign In</a>
+						</li>
 
+		    		<li class="menu-item menu-item-type-post_type menu-item-object-page">
+		    			<a href="<?php home_url(); ?>/sign-up">Create an account</a>
+		    		</li>
 
+					<?php } ?>
 
-			<?php } ?>
-			<li class="menu-item menu-item-type-post_type menu-item-object-page">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page">
 					<a href="<?php home_url(); ?>/request-invite">Sell on Kickdrop</a></li>
 				</li>
-				</ul>
+			</ul>
 		</nav>
 	</div><!-- /#top -->
 

@@ -63,6 +63,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			</ul>
 		</div>
 
+		<div class="social">
+			<?php echo do_shortcode('[twitter]'); ?>
+			<?php echo do_shortcode('[fbshare]'); ?>
+		</div>
+
 		<div class="tags">
 			<?php woocommerce_template_single_tags(); ?>
 		</div>
