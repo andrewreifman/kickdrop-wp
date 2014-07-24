@@ -11,7 +11,6 @@ body
   font-family: "Source Sans Pro", sans-serif
   background-color: #eef2f2
   padding: 0
-  font-size: 15px
   color: #000
 
 h1, h2, h3, h4, h5, h6
@@ -25,6 +24,9 @@ h1
   letter-spacing: -0.03em
   margin: 0 0 15px
   line-height: 1.1
+
+p
+  font-size: 15px
 
 a
   color: #000
@@ -246,6 +248,9 @@ form
   margin: 0
 
 .form-group
+  margin-bottom: 15px
+
+.form-row
   margin-bottom: 15px
 
 label
@@ -495,6 +500,9 @@ ul.products
           line-height: 1.6
           -webkit-font-smoothing: antialiased
 
+        ul
+          padding-left: 20px
+
       &#tab-reviews
         padding-top: 10px
 
@@ -516,6 +524,9 @@ ul.products
           padding-right: 20px
           width: 60px
           color: #000
+
+        label
+          margin: 0
 
         &.value
           select
@@ -780,6 +791,9 @@ ul.products
   .gist-meta
     display: none
 
+  table
+    margin: 0
+
 /*-----------------------------------------------------------------------------------*/
 /*  Cart
 /*-----------------------------------------------------------------------------------*/
@@ -863,6 +877,15 @@ p.cart-empty
 .woocommerce-checkout
   h1
     margin-bottom: 40px
+
+.checkout
+  #order_review
+    padding: 0
+    background-color: transparent
+    border-radius: 0
+
+    .payment_methods
+      display: none
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes

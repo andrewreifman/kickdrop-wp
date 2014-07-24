@@ -31,28 +31,20 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div class="col2-set" id="customer_details">
-
 			<div class="col-1">
-
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-
 			</div>
 
 			<div class="col-2">
-
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-
+				<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 			</div>
 
 		</div>
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-		<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
-
 	<?php endif; ?>
-
-	<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 
 </form>
 
