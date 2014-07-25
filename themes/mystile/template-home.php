@@ -7,7 +7,7 @@
 /**
  * Template Name: Home
  *
- * The blog page template displays the "blog-style" template on a sub-page. 
+ * The blog page template displays the "blog-style" template on a sub-page.
  *
  * @package WooFramework
  * @subpackage Template
@@ -29,7 +29,7 @@ get_header( 'shop' ); ?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-			<h1 class="page-title">Beautifully Crafted Code</h1>
+			<h1 class="page-title">Beautifully crafted code</h1>
 
 		<?php endif; ?>
 

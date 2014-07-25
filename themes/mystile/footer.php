@@ -45,13 +45,20 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
 		</section><!-- /#footer-widgets  -->
 	<?php } // End IF Statement ?>
-		<footer>
+		<footer class="clearfix">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
 				<img src="<?php echo esc_url( get_template_directory_uri().'/images/shoe.svg' ); ?>" width="38" />
 			</a>
 
 			<!-- <p class="copyright"><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'woothemes' ); ?></p> -->
+
+			<div class="social pull-right">
+				<a href="http://twitter.com/kickdropme" target="_blank"><i class="fa fa-twitter"></i><div class="sr-only">Twitter</div></a>
+				<a href="http://facebook.com/kickdropme" target="_blank"><i class="fa fa-facebook"></i><div class="sr-only">Facebook</div></a>
+			</div>
+
 			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+
 		</footer><!-- /#footer  -->
 	</div><!-- / footer-wrap -->
 <?php wp_footer(); ?>
