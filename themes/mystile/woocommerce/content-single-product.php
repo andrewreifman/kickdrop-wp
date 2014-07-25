@@ -64,8 +64,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		</div>
 
 		<div class="social">
-			<?php echo do_shortcode('[twitter]'); ?>
+			<?php echo do_shortcode('[twitter style="none"]'); ?>
 			<?php echo do_shortcode('[fbshare]'); ?>
+			<?php echo do_shortcode('[google_plusone size="medium"]'); ?>
+			<?php echo do_shortcode('[pinterest count="none]'); ?>
 		</div>
 
 		<div class="tags">
