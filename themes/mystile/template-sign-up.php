@@ -14,19 +14,19 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
  * @package WooFramework
  * @subpackage Template
  */
- 
+
 global $woo_options;
 get_header();
 
 ?>
-	<div class="page col-full">
+	<div class="customer-login">
 <?php wc_print_notices(); ?>
 
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-		<h1><?php _e( 'Sign Up', 'woocommerce' ); ?></h1>
+		<h1><?php _e( 'Create an account', 'woocommerce' ); ?></h1>
 
 		<form method="post" class="register">
 
@@ -41,17 +41,17 @@ get_header();
 
 			<?php endif; ?>
 
-			<p class="form-row form-row-wide">
-				<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input type="email" class="input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
-			</p>
+			<div class="form-group">
+				<label for="reg_email" class="sr-only"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<input type="email" class="input-text" name="email" id="reg_email" placeholder="Email address" />
+			</div>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
-	
-				<p class="form-row form-row-wide">
-					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="password" class="input-text" name="password" id="reg_password" />
-				</p>
+
+				<div class="form-group">
+					<label for="reg_password" class="sr-only"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<input type="password" class="input-text" name="password" id="reg_password" placeholder="Password" />
+				</div>
 
 			<?php endif; ?>
 
@@ -61,10 +61,14 @@ get_header();
 			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'register_form' ); ?>
 
-			<p class="form-row">
+			<div class="form-group">
 				<?php wp_nonce_field( 'woocommerce-register', 'register' ); ?>
-				<input type="submit" class="button" name="register" value="<?php _e( 'Register', 'woocommerce' ); ?>" />
-			</p>
+				<input type="submit" class="button" name="register" value="<?php _e( 'Sign up', 'woocommerce' ); ?>" />
+			</div>
+
+			<p>By signing up, you agree to our <a href="<?php home_url(); ?>/terms-of-use">Terms of Use</a>.</p>
+
+			<p class="signup-link">Already have an account? <a href="<?php home_url(); ?>/my-account">Log in</a></p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 

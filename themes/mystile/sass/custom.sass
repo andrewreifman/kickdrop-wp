@@ -7,11 +7,15 @@ $red: #f05a5b
   box-sizing: border-box
   outline: none
 
+html
+  height: 100%
+
 body
   font-family: "Source Sans Pro", sans-serif
   background-color: #eef2f2
   padding: 0
   color: #000
+  height: 100%
 
 h1, h2, h3, h4, h5, h6
   font-family: "Source Sans Pro", sans-serif
@@ -202,6 +206,11 @@ dl.variation dt, dl.variation dd
 /*-----------------------------------------------------------------------------------*/
 /*  Global
 /*-----------------------------------------------------------------------------------*/
+#wrapper
+  min-height: 100%
+  margin-bottom: -100px
+  padding-bottom: 140px
+
 #content
   max-width: 1020px
   padding: 0 15px
@@ -252,6 +261,11 @@ dl.variation dt, dl.variation dd
   overflow: hidden
   clip: rect(0, 0, 0, 0)
   border: 0
+
+header
+  h1
+    margin-bottom: 40px
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Buttons
@@ -399,6 +413,27 @@ table
 .customer-login
   max-width: 450px
   margin: 0 auto
+  text-align: center
+
+  h1
+    margin-bottom: 30px
+
+  input.input-text
+    font-size: 16px
+    text-align: center
+    height: 50px
+
+  input[type=submit]
+    font-size: 18px
+    height: 50px
+    margin-bottom: 10px
+    width: 100%
+
+  p.signup-link
+    margin-bottom: 5px
+
+    a
+      color: $blue
 
 /*-----------------------------------------------------------------------------------*/
 /*  Shop main
@@ -1157,6 +1192,24 @@ table.order_details
         vertical-align: middle
         margin-right: 10px
 
+/*-----------------------------------------------------------------------------------*/
+/*  My account
+/*-----------------------------------------------------------------------------------*/
+.edit-account-link
+  float: right
+  margin-top: -80px !important
+
+.account-downloads
+  margin-bottom: 40px
+
+ul.digital-downloads
+  padding: 0
+
+.my_account_orders
+  margin-bottom: 40px
+
+  .order-actions
+    text-align: right
 
 /*-----------------------------------------------------------------------------------*/
 /*  Helper classes

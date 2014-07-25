@@ -43,4 +43,34 @@ jQuery(document).ready(function($){
     // Add parent class to nav parents
 	jQuery("ul.sub-menu, ul.children").parents().addClass('parent');
 
+
+	// Input placeholder fallback for IE9
+	if (!Modernizr.input.placeholder) {
+	  $("[placeholder]").focus(function() {
+	    var input;
+	    input = $(this);
+	    if (input.val() === input.attr("placeholder")) {
+	      input.val("");
+	      input.removeClass("placeholder");
+	    }
+	  }).blur(function() {
+	    var input;
+	    input = $(this);
+	    if (input.val() === "" || input.val() === input.attr("placeholder")) {
+	      input.addClass("placeholder");
+	      input.val(input.attr("placeholder"));
+	    }
+	  }).blur();
+	  $("[placeholder]").parents("form").submit(function() {
+	    $(this).find("[placeholder]").each(function() {
+	      var input;
+	      input = $(this);
+	      if (input.val() === input.attr("placeholder")) {
+	        input.val("");
+	      }
+	    });
+	  });
+	}
+
+
 });

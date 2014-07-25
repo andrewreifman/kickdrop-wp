@@ -45,7 +45,7 @@ global $woo_options, $woocommerce;
 
 					<?php if ( is_user_logged_in() ) { ?>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page">
-							<a href="<?php home_url(); ?>/my-account">My Account</a>
+							<a href="<?php home_url(); ?>/my-account">My account</a>
 						</li>
 
 			    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
