@@ -1,3 +1,5 @@
+@import "compass"
+
 $orange: #ef9544
 $blue: #32b9b1
 $green: #6ecd44
@@ -132,19 +134,20 @@ dl.variation dt, dl.variation dd
 
   ul.nav
     > li
-      &.search
-        padding: 20px 15px
-        label
-          display: none
-        input[type="submit"]
-          display: none
-        input[type="search"]
-          box-shadow: none
-          background-color: #fff
-          border-color: #d8dddd
-          padding: 8px 12px 8px 12px
-          border-radius: 4px
-          margin: 0
+      &:hover
+        background-color: #f8fafa
+
+        a
+          color: #000
+
+      &.search-btn
+        a
+          padding: 26px 20px
+          height: 80px
+
+          > .fa
+            font-size: 26px
+            vertical-align: middle
 
       &.cart
         a
@@ -157,9 +160,6 @@ dl.variation dt, dl.variation dd
           font-size: 22px
           color: #000
           line-height: 75px
-
-          &:hover
-            background-color: #f8fafa
 
         .amount
           display: none
@@ -212,6 +212,70 @@ dl.variation dt, dl.variation dd
       display: inline-block
       &:hover
         color: #fff
+
+/*-----------------------------------------------------------------------------------*/
+/*  Search bar
+/*-----------------------------------------------------------------------------------*/
+.search-input
+  width: 100%
+  height: 0px
+  display: block
+  overflow: hidden
+  position: relative
+  background-color: #222
+  @include transition(height .25s .2s)
+  @include perspective(1600)
+
+  label
+    display: none
+
+  form
+    background-color: #fff
+    height: 120px
+    position: relative
+    @include transform(rotateX(-100deg))
+    @include transform-origin(top, center)
+    @include transition(all 0.25s linear)
+
+    &:after
+      content: "\f002"
+      font-family: FontAwesome
+      position: absolute
+      top: 20px
+      left: 25px
+      font-size: 50px
+      color: #e2e2e2
+
+  &.open
+    height: 120px
+    @include transition-delay(0s)
+
+    form
+      @include transform(rotateX(0))
+      @include transition-delay(.2s)
+
+  input[type="text"]
+    border: 0
+    font-size: 50px
+    padding: 0 120px 0 110px
+    outline: none
+    margin-top: 22px
+    background-color: transparent
+    width: 100%
+    letter-spacing: -.02em
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+      color: #e6e6e6
+
+  input[type="submit"]
+    display: none
+
+  .close
+    font-size: 60px
+    font-family: sans-serif
+    font-weight: 300
+    position: absolute
+    top: 25px
+    right: 30px
 
 /*-----------------------------------------------------------------------------------*/
 /*  Global
@@ -454,8 +518,8 @@ table
 .search-results
   .woocommerce-result-count
     display: block
-    margin-top: 10px
-    margin-bottom: 20px
+    margin-top: 0px
+    margin-bottom: 25px
 
 .woocommerce-ordering
   width: auto

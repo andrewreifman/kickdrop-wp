@@ -44,6 +44,17 @@ jQuery(document).ready(function($){
 	jQuery("ul.sub-menu, ul.children").parents().addClass('parent');
 
 
+	// Search form toggle
+	$('.search-btn a').click(function() {
+	  $('.search-input').toggleClass("open").find('input').focus();
+	  return false;
+	});
+
+	$('.close').click(function() {
+	  $(this).prev('input').val('').parents('.search-input').removeClass('open');
+	});
+
+
 	// Input placeholder fallback for IE9
 	if (!Modernizr.input.placeholder) {
 	  $("[placeholder]").focus(function() {
