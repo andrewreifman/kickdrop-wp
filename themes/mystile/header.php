@@ -37,13 +37,6 @@ global $woo_options, $woocommerce;
 <?php woo_top(); ?>
 
 <div id="wrapper">
-	<div class="search-input">
-		<?php
-			if ( class_exists( 'woocommerce' ) ) {
-				echo get_search_form();
-		} ?>
-	</div><!-- search-input -->
-
 	<div id="top">
 		<nav role="navigation" class="clearfix">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
@@ -56,7 +49,7 @@ global $woo_options, $woocommerce;
 						</li>
 
 			    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
-			    		<a href="<?php home_url(); ?>/?customer-logout=true">Sign Out</a>
+			    		<a href="<?php home_url(); ?>/?customer-logout=true">Log out</a>
 			    	</li>
 
 					<?php } else { ?>
@@ -77,7 +70,14 @@ global $woo_options, $woocommerce;
 		</nav>
 	</div><!-- /#top -->
 
-    <?php woo_header_before(); ?>
+	<div class="search-input">
+		<?php
+			if ( class_exists( 'woocommerce' ) ) {
+				echo get_search_form();
+		} ?>
+	</div><!-- search-input -->
+
+  <?php woo_header_before(); ?>
 
 	<header id="header" class="col-full">
 	  <hgroup>
@@ -90,7 +90,7 @@ global $woo_options, $woocommerce;
 
 		<?php
 			if ( class_exists( 'woocommerce' ) ) {
-				echo '<ul class="nav pull-right">';
+				echo '<ul class="nav search-cart pull-right">';
 				echo '<li class="search-btn"><a href="#"><i class="fa fa-search"></i></a></li>';
 				woocommerce_cart_link();
 				echo '</ul>';

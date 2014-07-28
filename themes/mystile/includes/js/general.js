@@ -50,10 +50,6 @@ jQuery(document).ready(function($){
 	  return false;
 	});
 
-	$('.close').click(function() {
-	  $(this).prev('input').val('').parents('.search-input').removeClass('open');
-	});
-
 
 	// Input placeholder fallback for IE9
 	if (!Modernizr.input.placeholder) {

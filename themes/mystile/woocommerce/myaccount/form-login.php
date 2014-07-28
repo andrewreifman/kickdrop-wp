@@ -1,9 +1,3 @@
-<style>
-	header {
-		display: none;
-	}
-</style>
-
 <?php
 /**
  * Login Form
@@ -27,6 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="customer-login">
 
 <?php endif; ?>
+		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/images/logo-login.png' ); ?>" width="60" />
+		</a>
 
 		<h1><?php _e( 'Welcome back', 'woocommerce' ); ?></h1>
 
