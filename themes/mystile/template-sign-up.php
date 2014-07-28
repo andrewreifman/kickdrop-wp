@@ -25,6 +25,9 @@ get_header();
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
+		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri().'/images/logo-login.png' ); ?>" width="60" />
+		</a>
 
 		<h1><?php _e( 'Create an account', 'woocommerce' ); ?></h1>
 

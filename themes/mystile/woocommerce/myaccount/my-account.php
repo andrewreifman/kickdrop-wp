@@ -20,11 +20,11 @@ wc_print_notices(); ?>
 
 <p class="myaccount_user">
 	<?php
-	
-		printf( __( '<a class="button pull-right" href="%s">Edit account details</a>.', 'woocommerce' ),
+
+		printf( __( '<a class="button pull-right" href="%s">Edit account details</a>', 'woocommerce' ),
 		wc_customer_edit_account_url()
 	);
-	
+
 
 	printf(
 		__( '<h1>%1$s</h1>', 'woocommerce' ) . ' ',
