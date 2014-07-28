@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $downloads = WC()->customer->get_downloadable_products() ) : ?>
 
+<div class="account-downloads">
+
 	<h2><?php echo apply_filters( 'woocommerce_my_account_my_downloads_title', __( 'Available downloads', 'woocommerce' ) ); ?></h2>
 
 	<ul class="digital-downloads">
@@ -33,5 +35,7 @@ if ( $downloads = WC()->customer->get_downloadable_products() ) : ?>
 			</li>
 		<?php endforeach; ?>
 	</ul>
+
+</div><!-- account-downloads -->
 
 <?php endif; ?>

@@ -37,6 +37,13 @@ global $woo_options, $woocommerce;
 <?php woo_top(); ?>
 
 <div id="wrapper">
+	<div class="search-input">
+		<?php
+			if ( class_exists( 'woocommerce' ) ) {
+				echo get_search_form();
+		} ?>
+	</div><!-- search-input -->
+
 	<div id="top">
 		<nav role="navigation" class="clearfix">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
@@ -45,7 +52,7 @@ global $woo_options, $woocommerce;
 
 					<?php if ( is_user_logged_in() ) { ?>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page">
-							<a href="<?php home_url(); ?>/my-account">My Account</a>
+							<a href="<?php home_url(); ?>/my-account">My account</a>
 						</li>
 
 			    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -84,7 +91,7 @@ global $woo_options, $woocommerce;
 		<?php
 			if ( class_exists( 'woocommerce' ) ) {
 				echo '<ul class="nav pull-right">';
-				echo get_search_form();
+				echo '<li class="search-btn"><a href="#"><i class="fa fa-search"></i></a></li>';
 				woocommerce_cart_link();
 				echo '</ul>';
 			}

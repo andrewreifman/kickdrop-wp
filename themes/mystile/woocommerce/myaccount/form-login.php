@@ -1,7 +1,7 @@
 <style>
-header h1{
-	display: none;
-}
+	header {
+		display: none;
+	}
 </style>
 
 <?php
@@ -28,18 +28,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php endif; ?>
 
-		<h1><?php _e( 'Sign In', 'woocommerce' ); ?></h1>
+		<h1><?php _e( 'Welcome back', 'woocommerce' ); ?></h1>
 
 		<form method="post" class="login">
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 			<div class="form-group">
-				<label for="username sr-only"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<label for="username" class="sr-only"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<input type="text" class="input-text" name="username" id="username" placeholder="Email address" />
 			</div>
 			<div class="form-group">
-				<label for="password sr-only"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<label for="password" class="sr-only"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<input class="input-text" type="password" name="password" id="password" placeholder="Password" />
 			</div>
 
@@ -48,12 +48,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="form-group">
 				<?php wp_nonce_field( 'woocommerce-login' ); ?>
 				<input type="submit" class="button" name="login" value="<?php _e( 'Login', 'woocommerce' ); ?>" />
-				<label for="rememberme" class="inline">
+<!-- 				<label for="rememberme" class="inline pull-right">
 					<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
-				</label>
+				</label> -->
 			</div>
+
+			<p class="signup-link">Don't have an account yet?  <a href="<?php home_url(); ?>/sign-up">Sign up</a></p>
 			<p class="lost_password">
-				<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+				<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php _e( 'Forgot your password?', 'woocommerce' ); ?></a>
 			</p>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
