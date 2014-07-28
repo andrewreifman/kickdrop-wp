@@ -49,7 +49,7 @@ global $woo_options, $woocommerce;
 						</li>
 
 			    	<li class="menu-item menu-item-type-post_type menu-item-object-page">
-			    		<a href="<?php home_url(); ?>/?customer-logout=true">Logout</a>
+			    		<a href="<?php home_url(); ?>/?customer-logout=true">Sign Out</a>
 			    	</li>
 
 					<?php } else { ?>
