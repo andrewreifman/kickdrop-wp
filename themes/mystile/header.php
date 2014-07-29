@@ -64,7 +64,7 @@ global $woo_options, $woocommerce;
 					<?php } ?>
 
 				<li class="menu-item menu-item-type-post_type menu-item-object-page">
-					<a href="<?php home_url(); ?>/request-invite">Sell on Kickdrop</a></li>
+					<a href="<?php home_url(); ?>/sell-on-kickdrop">Sell on Kickdrop</a></li>
 				</li>
 			</ul>
 		</nav>
