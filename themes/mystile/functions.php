@@ -107,15 +107,27 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 // Our hooked in function - $fields is passed via the filter!
 function custom_override_checkout_fields( $fields ) {
-     unset($fields['order']['order_comments']);
-     unset($fields['billing']['billing_country']);
-     unset($fields['billing']['billing_address_1']);
-     unset($fields['billing']['billing_address_2']);
-     unset($fields['billing']['billing_city']);
-     unset($fields['billing']['billing_postcode']);
-     unset($fields['billing']['billing_state']);
-          unset($fields['billing']['billing_phone']);
-     return $fields;
+	unset($fields['order']['order_comments']);
+	unset($fields['billing']['billing_country']);
+	unset($fields['billing']['billing_address_1']);
+	unset($fields['billing']['billing_address_2']);
+	unset($fields['billing']['billing_city']);
+	unset($fields['billing']['billing_postcode']);
+	unset($fields['billing']['billing_state']);
+	unset($fields['billing']['billing_phone']);
+	unset($fields['billing']['billing_company']);
+	$fields['billing']['billing_email']['required'] = false;
+	return $fields;
+}
+
+// Hook in
+add_filter( 'woocommerce_default_address_fields' , 'custom_override_default_address_fields' );
+
+// Our hooked in function - $address_fields is passed via the filter!
+function custom_override_default_address_fields( $address_fields ) {
+	$address_fields['first_name']['required'] = false;
+	$address_fields['last_name']['required'] = false;
+	return $address_fields;
 }
 
 function register_my_menu() {
