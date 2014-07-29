@@ -80,12 +80,10 @@ global $woo_options, $woocommerce;
   <?php woo_header_before(); ?>
 
 	<header id="header" class="col-full">
-	  <hgroup>
+	  <hgroup class="pull-left">
 		  <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		  	<img src="<?php echo esc_url( get_template_directory_uri().'/images/logo.png' ); ?>" width="134" />
 		  </a>
-
-			<h3 class="nav-toggle"><a href="#navigation"><mark class="websymbols">&#178;</mark> <span><?php _e('Navigation', 'woothemes'); ?></span></a></h3>
 		</hgroup>
 
 		<?php
