@@ -98,7 +98,9 @@ add_action( 'woocommerce_single_product_summary', 'wc_product_sold_count', 11 );
 function wc_product_sold_count() {
 	global $product;
 	$units_sold = get_post_meta( $product->id, 'total_sales', true );
-	echo sprintf( __( '%s downloads', 'woocommerce' ), $units_sold );
+	$extra = get_post_meta( $product->id, 'download_count', true );
+	$units_count = $units_sold + $extra;
+	echo $units_count;
 }
 
 
@@ -186,7 +188,7 @@ add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 
  * This code should be added to functions.php of your theme
  **/
 add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');
- 
+
 function custom_default_catalog_orderby() {
      return 'price-desc'; // Can also use title and price
 }

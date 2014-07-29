@@ -19,11 +19,11 @@ jQuery(document).ready(function($){
 
 
 	// Responsive Navigation (switch top drop down for select)
-	jQuery('ul#top-nav').mobileMenu({
-		switchWidth: 767,                   //width (in px to switch at)
-		topOptionText: 'Select a page',     //first option text
-		indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
-	});
+	// jQuery('ul#top-nav').mobileMenu({
+	// 	switchWidth: 767,                   //width (in px to switch at)
+	// 	topOptionText: 'Select a page',     //first option text
+	// 	indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
+	// });
 
 
 
