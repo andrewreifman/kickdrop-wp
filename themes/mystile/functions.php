@@ -98,9 +98,7 @@ add_action( 'woocommerce_single_product_summary', 'wc_product_sold_count', 11 );
 function wc_product_sold_count() {
 	global $product;
 	$units_sold = get_post_meta( $product->id, 'total_sales', true );
-	$extra = get_post_meta( $product->id, 'download_count', true );
-	$units_count = $units_sold + $extra;
-	echo $units_count;
+	echo sprintf( __( '%s downloads', 'woocommerce' ), $units_sold );
 }
 
 
