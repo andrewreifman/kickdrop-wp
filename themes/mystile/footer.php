@@ -1,12 +1,17 @@
-	<div class="newsletter-subscribe">
-		<form action="//kickdrop.us3.list-manage.com/subscribe/post?u=425ab2b3e010a637cca296582&amp;id=25af7aa38c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			<label for="mce-EMAIL">Subscribe to our mailing list</label>
-			<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-		    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-		    <div style="position: absolute; left: -5000px;"><input type="text" name="b_425ab2b3e010a637cca296582_25af7aa38c" tabindex="-1" value=""></div>
-		    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-		</form>
-	</div>
+	<?php if (is_shop() || is_product() || is_product_category()) {
+	?>
+		<div class="newsletter-subscribe">
+				<form action="//kickdrop.us3.list-manage.com/subscribe/post?u=425ab2b3e010a637cca296582&amp;id=25af7aa38c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<label for="mce-EMAIL">Subscribe to our mailing list</label>
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+				    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_425ab2b3e010a637cca296582_25af7aa38c" tabindex="-1" value=""></div>
+				    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				</form>
+			</div>
+	<?php
+	}
+	?>
 
 </div><!-- /#wrapper -->
 <?php
@@ -74,6 +79,15 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 <?php wp_footer(); ?>
 <?php woo_foot(); ?>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-41062279-2', 'auto');
+	  ga('send', 'pageview');
+	</script>
+
 </body>
 </html>

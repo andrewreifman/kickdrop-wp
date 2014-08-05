@@ -44,6 +44,12 @@ jQuery(document).ready(function($){
 	jQuery("ul.sub-menu, ul.children").parents().addClass('parent');
 
 
+	// Top alert dismiss
+	$('.top-alert .close').click(function() {
+	  $('.top-alert').hide();
+	  return false;
+	});
+
 	// Search form toggle
 	$('.search-btn a').click(function() {
 	  $('.search-input').toggleClass("open").find('input').focus();

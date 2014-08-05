@@ -18,35 +18,36 @@ global $woo_options, $woocommerce;
 <html <?php language_attributes(); ?> class="<?php if ( $woo_options['woo_boxed_layout'] == 'true' ) echo 'boxed'; ?> <?php if (!class_exists('woocommerce')) echo 'woocommerce-deactivated'; ?>">
 <head>
 
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-<title><?php woo_title(''); ?></title>
-<?php woo_meta(); ?>
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic" media="all" rel="stylesheet" />
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php
-	wp_head();
-	woo_head();
-?>
+	<title><?php woo_title(''); ?></title>
+	<?php woo_meta(); ?>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic" media="all" rel="stylesheet" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php
+		wp_head();
+		woo_head();
+	?>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-41062279-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </head>
 
 <body <?php body_class(); ?>>
 <?php woo_top(); ?>
 
 <div id="wrapper">
+	<?php if (is_shop()) {
+	?>
+		<div class="top-alert">
+			Open up shop and sell your code on Kickdrop. <a href="<?php home_url(); ?>/sell-on-kickdrop">Request an invite</a>
+			<a class="close" data-dismiss="alert" href="#" onclick="hideMe()" >&times;</a>
+		</div><!-- top-alert -->
+	<?php
+	}
+	?>
+
 	<div id="top">
 		<nav role="navigation" class="clearfix">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>

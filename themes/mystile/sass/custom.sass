@@ -77,6 +77,40 @@ dl.variation dt, dl.variation dd
 /*-----------------------------------------------------------------------------------*/
 /*  Header/footer
 /*-----------------------------------------------------------------------------------*/
+.top-alert
+  background-color: #1aa5df
+  text-align: center
+  position: relative
+  padding: 20px
+  color: #fff
+  font-size: 15px
+
+  a:not(.close)
+    color: #fff
+    font-weight: 600
+    display: inline-block
+    vertical-align: middle
+    background-color: $orange
+    padding: 6px 14px
+    border-radius: 4px
+    margin-left: 12px
+    margin-top: -2px
+
+    &:hover
+      background-color: darken($orange,5%)
+
+  .close
+    position: absolute
+    font-family: sans-serif
+    top: 50%
+    right: 20px
+    margin-top: -10px
+    cursor: pointer
+    color: #fff
+    font-size: 22px
+    font-weight: 600
+    line-height: 16px
+
 #top
   padding: 0 10px 0 0
   margin: 0
