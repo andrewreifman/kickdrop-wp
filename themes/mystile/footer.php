@@ -68,7 +68,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 			<!-- <p class="copyright"><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'woothemes' ); ?></p> -->
 
 			<div class="social pull-right">
-				<a href="http://twitter.com/kickdropme" target="_blank"><i class="fa fa-twitter"></i><div class="sr-only">Twitter</div></a>
+				<a href="http://twitter.com/kickdropshop" target="_blank"><i class="fa fa-twitter"></i><div class="sr-only">Twitter</div></a>
 				<a href="http://facebook.com/kickdropme" target="_blank"><i class="fa fa-facebook"></i><div class="sr-only">Facebook</div></a>
 			</div>
 
